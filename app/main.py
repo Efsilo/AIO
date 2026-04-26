@@ -2,6 +2,9 @@ from aiohttp import web
 from app.routes import setup_routes
 from app.database import engine, Base
 import asyncio
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 async def init_db():
     async with engine.begin() as conn:
